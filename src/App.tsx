@@ -56,17 +56,17 @@ function App() {
 
   const testimonials = [
     {
-      name: "John D.",
+      name: "Chukwuemeka O.",
       text: "The structured approach helped me understand trading beyond just buying and selling. I now think systematically about risk and opportunity.",
       role: "Previous Trainee",
     },
     {
-      name: "Sarah M.",
+      name: "Aisha M.",
       text: "I came in with no tech background. The AI Media training gave me practical skills I use daily in my business.",
       role: "Previous Trainee",
     },
     {
-      name: "Michael R.",
+      name: "Oluwaseun A.",
       text: "The hands-on approach made all the difference. I learned by doing, not just watching.",
       role: "Previous Trainee",
     },
@@ -337,20 +337,27 @@ function App() {
 
         <div className="grid md:grid-cols-3 gap-8 mt-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <CardContainer
               key={index}
-              className="bg-gray-900 border border-[#02ccfe]/30 rounded-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(2,204,254,0.2)] hover:border-[#02ccfe]"
+              className="w-full"
+              containerClassName="py-0"
             >
-              <p className="text-base leading-relaxed mb-6 italic text-gray-300">
-                "{testimonial.text}"
-              </p>
-              <div className="border-t border-[#02ccfe]/20 pt-4">
-                <p className="font-semibold text-lg mb-1 text-[#02ccfe]">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-gray-500">{testimonial.role}</p>
-              </div>
-            </div>
+              <CardBody className="bg-gray-900 border border-[#02ccfe]/30 rounded-xl p-8 hover:border-[#02ccfe] transition-all duration-300 w-full h-auto">
+                <CardItem translateZ="50" className="w-full">
+                  <p className="text-base leading-relaxed mb-6 italic text-gray-300">
+                    "{testimonial.text}"
+                  </p>
+                </CardItem>
+                <CardItem translateZ="60" className="w-full">
+                  <div className="border-t border-[#02ccfe]/20 pt-4">
+                    <p className="font-semibold text-lg mb-1 text-[#02ccfe]">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
           ))}
         </div>
       </section>
